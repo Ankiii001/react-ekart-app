@@ -4,11 +4,13 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 25px;
+    background-color: rgb(127, 103, 233);
   
     .logo-container {
-      height: 100%;
-      width: 70px;
-      padding: 25px;
+      height: 50%;
+      width: 60px;
+      padding-left: 20px;
+      padding-top: 5px;
     }
   
     .options {
@@ -20,6 +22,15 @@
   
       .option {
         padding: 10px 15px;
+        font-weight: bold;
+        color: wheat;
+
+        cursor: pointer;
+
+        &:hover{
+          -webkit-transform: scale(1.2);
+          color: white;
+        }
       }
     }
   }
