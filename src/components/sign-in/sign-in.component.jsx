@@ -1,14 +1,16 @@
 import React from 'react'
+
 import { connect } from 'react-redux'
 
 import FormInput from '../form-input/form-input.component'
 import CustomButton from '../custom-button/custom-button.component'
 
-import { setCurrentUser } from '../../redux/user/user.actions'
+import { setCurrentUser, login } from '../../redux/user/user.actions'
 
 import './sign-in.styles.scss'
 
 class SignIn extends React.Component {
+    
     constructor(props) {
         super(props)
 
@@ -20,19 +22,9 @@ class SignIn extends React.Component {
 
     handleSubmit = event => {
         event.preventDefault()
-        const { userName, password } = this.state
-        const url = `//localhost:3001/users?user-name=${userName}&password=${password}`
-        fetch(url)
-        .then(response => response.json())
-        .then(userData => {
-            console.log('user valid')
-            console.log(userData)
-            console.log(userData[0].user_name)
-            localStorage.setItem('user', userData[0].user_name)
-            this.props.setCurrentUser({ currentUser: userData[0].user_name })    
-            this.setState({ userName: '', password: '' })
-        })   
-        .catch (error => console.log(error))
+        // const { userName, password } = this.state
+        this.props.login(this.state)
+        console.log(this.props)
     }
 
     handleChange = event => {
@@ -81,7 +73,8 @@ const mapStateToProps = ({ user }) => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-    setCurrentUser: user => dispatch(setCurrentUser(user))
+    setCurrentUser: user => dispatch(setCurrentUser(user)),
+    login: (args) => dispatch(login(args))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(SignIn)

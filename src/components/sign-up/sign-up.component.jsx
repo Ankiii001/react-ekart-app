@@ -55,10 +55,12 @@ class SignUp extends React.Component {
         } else {
             console.log("fail")
         }
-
+        this.props.history.push('/');
     } catch (error) {
       console.error(error);
     }
+    
+    
   };
 
   handleChange = event => {
@@ -112,5 +114,8 @@ class SignUp extends React.Component {
     );
   }
 }
+
+
+
 
 export default SignUp;

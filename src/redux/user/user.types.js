@@ -1,3 +1,4 @@
 export const UserActionTypes = {
-    LOGIN: 'LOGIN'
+    LOGIN: 'LOGIN',
+    LOGIN_REQUEST: 'LOGIN_REQUEST'
 }

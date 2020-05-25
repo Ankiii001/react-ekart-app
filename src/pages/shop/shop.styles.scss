@@ -1,31 +1,21 @@
-.collection-preview {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 30px;
-  
-    .title {
-      font-size: 28px;
-      margin-bottom: 25px;
-    }
-  
-    .preview {
-      display: flex;
-      justify-content: space-between;
-    }
-  }
+.preview {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
 
-  .actions {
-    border-bottom: 1px solid #dedfe0;
-    padding: .5rem
+.actions {
+  border-bottom: 1px solid #dedfe0;
+  padding: .5rem
 }
 
 .actions__container {
-    align-items: center;
-    display: flex;
-    max-width: 40rem;
-    margin: 0 auto;
-    min-height: 3rem;
-    padding: 0 1.6rem;
+  align-items: center;
+  display: flex;
+  max-width: 40rem;
+  margin: 0 auto;
+  min-height: 3rem;
+  padding: 0 1.6rem;
 }
 
 .shop-input {
@@ -46,4 +36,15 @@
   font-weight: 300;
   height: 2rem;
   margin-right: .8rem;
+}
+
+.card-list {
+  height: 500px;
+  align-items: left;
+  padding: 50px 10px;
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  
 }

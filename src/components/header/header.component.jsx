@@ -19,9 +19,6 @@ const Header = ( {currentUser, hidden, setCurrentUser} ) => (
             <Link className='option' to="/shop">
                 SHOP
             </Link>
-            <Link className='option' to="/shop">
-                CONTACT
-            </Link>
             {
                 currentUser ?
                 <div className='option' onClick={() => {
