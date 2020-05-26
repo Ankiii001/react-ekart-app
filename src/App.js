@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 
 
 import CheckoutPage from './pages/checkout/checkout.component'
+import ProductDetails from './pages/product-detail/product-detail.component'
 import ShopPage from './pages/shop/shop.component'
 import Header from './components/header/header.component'
 import UserSignUpAndSignInPage from './pages/user-sign-up-and-sign-in/user-sign-up-and-sign-in.component'
@@ -12,6 +13,7 @@ import { setCurrentUser } from './redux/user/user.actions'
 
 
 import './App.css';
+// import { ProductActionTypes } from './redux/product/product.types';
 
 class App extends React.Component {
 
@@ -27,7 +29,8 @@ class App extends React.Component {
         <Header />
         <Switch>
           <Route exact path='/' component={ShopPage} />
-          <Route path='/shop' component={ShopPage} />
+          <Route exact path='/shop' component={ShopPage} />
+          <Route exact path='/shop/:id' component={ProductDetails} />
           <Route exact path='/checkout' component={CheckoutPage} />
           <Route
             exact

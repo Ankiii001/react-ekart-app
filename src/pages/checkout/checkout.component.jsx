@@ -2,8 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
-
+import { uuid } from 'uuidv4';
 import CheckoutItem from '../../components/checkout-item/checkout-item.component';
+import CustomButton from '../../components/custom-button/custom-button.component'
 
 
 import {
@@ -36,6 +37,11 @@ const CheckoutPage = ({ cartItems, total }) => (
       <CheckoutItem key={cartItem.id} cartItem={cartItem} />
     ))}
     <div className='total'>TOTAL: ${total}</div>
+    {
+      total?<CustomButton onClick={ () => { if (window.confirm(`Placing order number ${uuid()} placed successfully. `)){
+        window.location.href="//localhost:3000/shop";
+      } }} isReset >BUY</CustomButton>: null
+    }
   </div>
 );
 
